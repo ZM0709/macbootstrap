@@ -1,22 +1,22 @@
 #!/bin/sh
 source basic.sh
 
-if [[ ! -e /usr/local/bin/sslocal ]]; then
-    brew install shadowsocks-libev
-    brew services start shadowsocks-libev
-    ln -s /usr/local/opt/shadowsocks-libev/bin/ss-local /usr/local/bin/sslocal
-    ln -s /usr/local/opt/shadowsocks-libev/bin/ss-server /usr/local/bin/ss-server
-else
-    echo "You have installed shadowsocks"
-fi
+# if [[ ! -e /usr/local/bin/sslocal ]]; then
+#     brew install shadowsocks-libev
+#     brew services start shadowsocks-libev
+#     ln -s /usr/local/opt/shadowsocks-libev/bin/ss-local /usr/local/bin/sslocal
+#     ln -s /usr/local/opt/shadowsocks-libev/bin/ss-server /usr/local/bin/ss-server
+# else
+#     echo "You have installed shadowsocks"
+# fi
 
-# install and use shadowsocks
-if not_tt_network; then
-    nohup sslocal -c ~/.macbootstrap/tools/netconf &> /private/tmp/nohup.out&
-    #export ALL_PROXY=socks5://127.0.0.1:14179
-else
-    echo "You are in toutiao network, no need to use ss now"
-fi
+# # install and use shadowsocks
+# if not_tt_network; then
+#     nohup sslocal -c ~/.macbootstrap/tools/netconf &> /private/tmp/nohup.out&
+#     #export ALL_PROXY=socks5://127.0.0.1:14179
+# else
+#     echo "You are in toutiao network, no need to use ss now"
+# fi
 
 if [[ ! -e /Applications/iTerm.app ]]; then
     brew cask install iterm2
