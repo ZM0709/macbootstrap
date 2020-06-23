@@ -84,11 +84,11 @@ else
 fi
 
 # install jetbrain toolbox
-if [[ ! -e /Applications/JetBrains\ Toolbox.app ]]; then
-    brew cask install jetbrains-toolbox
-else
-    echo "You have installed JetBrains Toolbox"
-fi
+#if [[ ! -e /Applications/JetBrains\ Toolbox.app ]]; then
+#    brew cask install jetbrains-toolbox
+#else
+#    echo "You have installed JetBrains Toolbox"
+#fi
 
 brew install --HEAD universal-ctags/universal-ctags/universal-ctags
 brew install redis
