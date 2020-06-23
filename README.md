@@ -70,3 +70,12 @@ sudo chown -R `whoami` /usr/local
 
 详细用法与教程请参考这份说明: [Vim 使用指南](./doc/vim.md)
 
+
+
+
+
+
+
+
+
+
