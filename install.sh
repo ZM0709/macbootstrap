@@ -19,7 +19,7 @@ source basic.sh
 # fi
 
 if [[ ! -e /Applications/iTerm.app ]]; then
-    brew cask install iterm2
+    brew install --cask iterm2
     defaults delete com.googlecode.iterm2
     ln -s ~/.macbootstrap/config/com.googlecode.iterm2.plist $HOME/Library/Preferences
     # config background image location
@@ -32,13 +32,13 @@ else
 fi
 
 if [[ ! -e /Applications/SourceTree.app ]]; then
-    brew cask install sourcetree
+    brew install --cask sourcetree
 else
     echo "You have installed SourceTree"
 fi
 
 if [[ ! -e /Applications/WeChat.app ]]; then
-    brew cask install wechat
+    brew install --cask wechat
 else
     echo "You have installed WeChat"
 fi
@@ -56,7 +56,7 @@ else
 fi
 
 if [[ ! -e /Applications/Visual\ Studio\ Code.app ]]; then
-    brew cask install visual-studio-code
+    brew install --cask visual-studio-code
     sh ./vscode/setup.sh
 else
     echo "You have installed vscode"
@@ -65,19 +65,19 @@ fi
 if brew ls --versions gnu-sed > /dev/null; then
     echo "You have installed gsed"
 else
-    brew install gnu-sed
+    brew install --cask gnu-sed
 fi
 
 # install sz/rz
 if brew ls --versions lrzsz > /dev/null; then
     echo "You have installed lrzsz"
 else
-    brew install lrzsz
+    brew install --cask lrzsz
 fi
 
 # install coreutils
 if [[ ! -e /usr/local/opt/coreutils ]]; then
-    brew install coreutils
+    brew install --cask coreutils
     cp /usr/local/opt/coreutils/libexec/gnubin/gls /usr/local/opt/coreutils/libexec/gnubin/ls
 else
     echo "You have installed coreutils"
@@ -90,30 +90,30 @@ fi
 #    echo "You have installed JetBrains Toolbox"
 #fi
 
-brew install --HEAD universal-ctags/universal-ctags/universal-ctags
-brew install redis
-brew_install python3
-brew_install cmake
-brew_install gawk
-brew_install autojump
-brew_install wget
-brew_install nvm
-brew_install exiv2
-brew_install ssh-copy-id
-brew_install imagemagick
-brew_install catimg
-brew_install gpg
-brew_install icdiff
-brew_install scmpuff
-brew_install fzf
-brew_install fd
-brew_install the_silver_searcher
-brew_install nvim
-brew_install exiftool
-brew_install archey
-brew_install ranger
-brew_install git-lfs && git lfs install
-brew_install cloc
+brew install --cask --HEAD universal-ctags/universal-ctags/universal-ctags
+brew install --cask redis
+brew install --cask python3
+brew install --cask cmake
+brew install --cask gawk
+brew install --cask autojump
+brew install --cask wget
+brew install --cask nvm
+brew install --cask exiv2
+brew install --cask ssh-copy-id
+brew install --cask imagemagick
+brew install --cask catimg
+brew install --cask gpg
+brew install --cask icdiff
+brew install --cask scmpuff
+brew install --cask fzf
+brew install --cask fd
+brew install --cask the_silver_searcher
+brew install --cask nvim
+brew install --cask exiftool
+brew install --cask archey
+brew install --cask ranger
+brew install --cask git-lfs && git lfs install
+brew install --cask cloc
 $(brew --prefix)/opt/fzf/install --all
 
 # link git config
